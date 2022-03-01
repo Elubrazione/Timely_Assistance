@@ -1,0 +1,21 @@
+<view class="searchbar">
+  <view class="content">
+    <image src="../../icon/_search.png" class="search-icon"></image>
+    <input 
+      bindinput="handleInput"
+      bindconfirm="handleConfirm"
+      type="text"
+      value="{{inputValue}}" 
+      placeholder="{{placeholder}}" 
+      class="input"
+      confirm-type="search"
+    ></input>
+    <image
+     wx:if="{{inputValue}}" 
+     bindtap="handleDeleteClick"
+     src="../../icon/delete.png" 
+     class="delete-icon"
+    ></image>
+  </view>
+  <view wx:if="{{inputValue}}" bindtap="handleTextbtnClick" class="text-btn">取消</view>
+</view>
