@@ -18,21 +18,21 @@
         "pagePath": "pages/index/index",
         "text": "帮助广场",
         "iconPath": "icon/_home.png",
-        "selectedIconPath":"icon/home.png"
+        "selectedIconPath": "icon/home.png"
       },
       {
         "pagePath": "pages/output/output",
         "text": "消息中心",
         "iconPath": "icon/_search.png",
-        "selectedIconPath":"icon/search.png"
+        "selectedIconPath": "icon/search.png"
       },
       {
-      "pagePath": "pages/my/my",
-      "text": "个人中心",
-      "iconPath": "icon/_my.png",
-      "selectedIconPath":"icon/my.png"
-    }
-  ]
+        "pagePath": "pages/my/my",
+        "text": "个人中心",
+        "iconPath": "icon/_my.png",
+        "selectedIconPath": "icon/my.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
