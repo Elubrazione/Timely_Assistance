@@ -1,9 +1,4 @@
-<!--index.wxml-->
-<view>
-  <searchBar inner-text="" class="searchbar">
-  </searchBar>
-</view>
-
+<!--components/helpDetail/helpDetails.wxml-->
 <view class="user">
   <view class="content">
     <view>

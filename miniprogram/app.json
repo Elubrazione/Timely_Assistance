@@ -2,23 +2,12 @@
   "pages": [
     "pages/index/index",
     "pages/my/my",
-    "pages/output/output",
-    "pages/getOpenId/index",
-    "pages/getMiniProgramCode/index",
-    "pages/deployService/index",
-    "pages/createCollection/index",
-    "pages/uploadFile/index",
-    "pages/selectRecord/index",
-    "pages/updateRecord/index",
-    "pages/updateRecordResult/index",
-    "pages/updateRecordSuccess/index",
-    "pages/sumRecord/index",
-    "pages/sumRecordResult/index"
+    "pages/output/output"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#44cef6",
+    "navigationBarBackgroundColor": "#eb993c",
     "navigationBarTitleText": "帮帮忙",
     "enablePullDownRefresh": true,
     "navigationBarTextStyle": "black"
@@ -27,13 +16,13 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "我的消息",
+        "text": "帮助广场",
         "iconPath": "icon/_home.png",
         "selectedIconPath":"icon/home.png"
       },
       {
         "pagePath": "pages/output/output",
-        "text": "我要发布",
+        "text": "消息中心",
         "iconPath": "icon/_search.png",
         "selectedIconPath":"icon/search.png"
       },

@@ -15,8 +15,8 @@
   align-items: center;
 }
 .search-icon {
-  width: 34rpx;
-  height: 34rpx;
+  width: 50rpx;
+  height: 50rpx;
   margin-bottom: -4rpx;
 }
 .input {
@@ -34,5 +34,5 @@
   font-size: 32rpx;
   font-family: PingFangSC;
   font-weight: 400;
-  color: rgba(21,96,220,1);
+  color: rgb(3, 17, 39);
 }
