@@ -1,4 +1,5 @@
 // pages/index/index.js
+const app=getApp()
 Page({
   data: {
   },
@@ -19,17 +20,24 @@ Page({
             name: "login",
             data: {},
             success: res => {
-              this.setData({  //用户设置
-                avatarUrl: res.userInfo.avatarUrl,  //用户头像
-                userInfo: res.userInfo  //用户其它信息
-              })
-              wx.setStorage({ //将数据存储在本地缓存中指定的 key 中
-                key: "Userinfo",  //本地缓存中指定的key
-                data: this.data.userInfo  //需要储存的内容
-              })
-              wx.switchTab({  //界面跳转到指定页面，这里要跳转到我们的广场
-                /*************这里做好后要填起来填************/
-                url: 'url',
+              // app.globalData.openid = res.result.openid
+              // wx.setStorageSync("myOpenId", res.result.openid);
+              wx.getUserProfile({
+                desc: '授权将用于完善用户资料',
+                success: res => {
+                  this.setData({  //用户设置
+                    userInfo: res.userInfo,
+                    hasUserInfo: true
+                  })
+                  wx.setStorage({ //将数据存储在本地缓存中指定的 key 中
+                    key: "Userinfo",  //本地缓存中指定的key
+                    data: this.data.userInfo  //需要储存的内容
+                  })
+                  wx.switchTab({  //界面跳转到指定页面，这里要跳转到我们的广场
+                    /*************这里做好后要填起来填************/
+                    url: 'url',
+                  })
+                }
               })
             },
             fail: err => {  //接口调用失败
@@ -37,7 +45,7 @@ Page({
               wx.showToast({
                 title: '云函数：调用失败',
                 icon: 'none',
-                duration: 1500
+                duration: 2000
               })
             }
           })

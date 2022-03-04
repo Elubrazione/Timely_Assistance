@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    
+  },
   "backgroundTextStyle": "dark",
   "navigationBarTitleText": "帮帮忙",
   "navigationBarTextStyle": "black",

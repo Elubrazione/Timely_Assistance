@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/my/my",
-    "pages/output/output"
+    "pages/main_message/main_message",
+    "pages/square/square"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -15,13 +16,13 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/square/square",
         "text": "帮助广场",
         "iconPath": "icon/_home.png",
         "selectedIconPath": "icon/home.png"
       },
       {
-        "pagePath": "pages/output/output",
+        "pagePath": "pages/main_message/main_message",
         "text": "消息中心",
         "iconPath": "icon/_search.png",
         "selectedIconPath": "icon/search.png"
