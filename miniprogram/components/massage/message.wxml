@@ -1,0 +1,8 @@
+<!--components/massage/message.wxml-->
+<view class="out">
+  <image src="../../icon/_home.png" class="photo"> </image>
+   <view class="title">
+    <view>消息通知</view>
+    <view>我是测试的话,我是一个消息</view>
+   </view>
+</view>
