@@ -1,2 +1,93 @@
-<!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class='UCenter-bg'>
+
+<image class='Userhead' src='{{User_head_url}}' bindtap='uploadhead'></image>
+
+<view class='text-xl text-xl' bindtap="modalinput">
+{{Username}}
+</view>
+<text>已加入{{Join_Time}}天</text>
+<image src="" mode="scaleToFill" class="gif-wave"></image>
+
+</view>
+<view class='three_button_view' >
+<view class='three_button_view_in' bindtap="discussbutton">
+
+  <view>
+    <image src='../../icon/collection.png' style='width:60rpx;height:60rpx'></image>
+  </view>
+  <view style='margin-top:10rpx'>
+ 收藏
+  </view>
+</view>
+
+ <view class='three_button_view_in'  bindtap="chatbutton">
+  <view>
+    <image src='../../icon/up.png' style='width:60rpx;height:60rpx'></image>
+  </view>
+  <view style='margin-top:10rpx'>
+  点赞
+  </view>
+</view>
+
+<view class='three_button_view_in'  bindtap="upbutton">
+  <view>
+    <image src='../../icon/foot.png' style='width:60rpx;height:60rpx'></image>
+  </view>
+  <view style='margin-top:10rpx'>
+ 足迹
+  </view>
+</view>
+</view>
+<view class='bottom_view'>
+<view class='bottom_center_view'>
+
+  <view class='bottom_list' bindtap='toMinemypost'>
+    <view class='list_button_view'>
+      <image src='/icon/book.png' style='width:60rpx;height:60rpx'></image>
+    </view>
+    <view class='list_button_text' >
+      我的发布
+    </view>
+    <view class='list_button_jiantou'>
+    ></view>
+  </view>
+  <view class='bottom_list'bindtap='toMineMySell'>
+    <view class='list_button_view'>
+          <image src='/icon/shop.png' style='width:50rpx;height:50rpx'></image>
+    </view>
+    <view class='list_button_text'>
+      我的出售
+    </view>
+    <view class='list_button_jiantou'>
+    ></view>
+  </view>
+  
+  <view class='bottom_list' style="position:relative">
+    <view class='list_button_view'>
+      <image src='/icon/suggest.png' style='width:50rpx;height:50rpx'></image>
+    </view>
+    <view class='list_button_text' >
+          反馈建议
+    </view>
+    <view class='list_button_jiantou'>
+    ></view>
+    <button  open-type='feedback' style="position:absolute;top:0;left:0;height:102rpx;width:100%;z-index:100"></button>
+  </view>
+
+  <view style='width:100%;height:100rpx; align-items: center;display: flex;font-size: 30rpx;  color:rgb(0, 0, 0,0.8);'>
+    <view class='list_button_view'>
+      <image src='/icon/announce.png' style='width:50rpx;height:50rpx'></image>
+    </view>
+    <view class='list_button_text' bindtap='ShowAboutus'>
+     TA公约
+    </view>
+    <view class='list_button_jiantou'>
+    ></view>
+  </view>
+
+</view>
+</view>
+
+<view class='left_red_radius' wx:if="{{replyNumber>0}}">{{replyNumber}}</view>
+<view class='center_red_radius' wx:if="{{toupNumber>0}}">{{toupNumber}}</view>
+<view class='right_red_radius' wx:if="{{chatNumber>0}}">{{chatNumber}}</view>
