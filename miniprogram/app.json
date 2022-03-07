@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/square/square",
     "pages/index/index",
     "pages/my/my",
-    "pages/main_message/main_message",
-    "pages/square/square"
+    "pages/main_message/main_message"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
