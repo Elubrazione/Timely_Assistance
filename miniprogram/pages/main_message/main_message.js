@@ -5,6 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    chatlist:[
+      {username:"小明",lastmessage:"好的"},
+      {username:"小红",lastmessage:"不要了"},
+      {username:"小蓝",lastmessage:"谢谢你"},
+    ],
 
   },
 
@@ -13,6 +18,12 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+
+  switch: function () {
+    wx.navigateTo({
+      url: '../chat/chat',
+    })
   },
 
   /**

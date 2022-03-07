@@ -1,2 +1,21 @@
-<!--pages/output/output.wxml-->
-<text>pages/output/output.wxml</text>
+<!--pages/mian-message/main-message.wxml-->
+<view> 
+  <searchBar inner-text="" class="searchbar">
+  </searchBar>
+</view>
+
+<view class="block"></view>
+
+<view wx:for="{{chatlist}}">
+    <view class="chat" bindtap="switch">
+        <view class="chatcontent">
+            <view>
+                <image src="../../icon/user-unlogin.png" class="userimg"></image>
+            </view>
+            <view class="leftpart">
+                <view class="name">{{item.username}}</view>
+                <view class="lastmsg">{{item.lastmessage}}</view>
+            </view>
+        </view>
+    </view>
+</view>

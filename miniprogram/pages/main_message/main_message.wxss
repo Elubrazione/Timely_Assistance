@@ -1,1 +1,53 @@
 /* pages/output/output.wxss */
+
+page {
+    padding-top: 20rpx;
+    background-color: #f6f6f6;
+    padding-bottom: 2rpx;
+}
+
+.block{
+  padding-top: 15rpx;
+}
+
+.chat {
+  display: flex;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  /* padding-bottom: 2rpx ; */
+}
+
+.chatcontent{
+  display: flex;
+  height: 140rpx;
+  width: 40rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  background: rgb(247,247,247);
+  border: 4rpx solid rgb(229,229,229);
+  flex: 1;
+}
+
+.userimg{
+  padding-top: 5rpx;
+  height: 130rpx;
+  width: 130rpx;
+  padding-left: 0rpx;
+}
+
+
+.name{
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 20rpx;
+  padding-left: 15rpx;
+  font-size: 42rpx;
+  font-weight: bold;
+}
+
+.lastmsg{
+  padding-top: 5rpx;
+  padding-left: 15rpx;
+  color: rgb(185, 184, 184);
+  font-size: 35rpx;
+  font-weight: 5500;
+}
