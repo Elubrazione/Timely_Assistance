@@ -1,62 +1,37 @@
 // pages/index/index.js
-const app=getApp()
 Page({
   data: {
+      userInfo: {},
+      hasUserInfo: false,
+      canIUseGetUserProfile: false,
   },
-
-  onLoad: function (options) {
-    if(!wx.cloud){
-      wx.showToast({
-        title: '尚未登陆',  //提示内容
-        icon: 'loading',  //显示加载的图标
-        duration: 1500  //提示的延迟时间
+  onLoad() {
+      if (wx.getUserProfile) {
+          this.setData({
+              canIUseGetUserProfile: true
+          })
+      }
+  },
+  getUserProfile(e) {
+      // 使用wx.getUserProfile获取用户信息 开发者每次通过该接口获取用户个人信息均需用户确认
+      // 开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
+      wx.getUserProfile({
+          // 声明获取用户个人信息后的用途，后续会展示在弹窗中 谨慎填写
+          desc: '您的授权将用于完善用户初始资料',
+          success: (res) => {
+              // console.log(res.userInfo); 
+              this.setData({
+                  userInfo: res.userInfo,
+                  hasUserInfo: true
+              })
+          }
       })
-      return 
-    }
-    wx.getSetting({ //获取用户的当前设置
-      success: res => { //接口调用成功的回调函数，res是服务器返回的内容，相当于object
-        if(res.authSetting['scope.userInfo']){  //scope.userInfo：是否授权信息
-          wx.cloud.callFunction({
-            name: "login",
-            data: {},
-            success: res => {
-              // app.globalData.openid = res.result.openid
-              // wx.setStorageSync("myOpenId", res.result.openid);
-              wx.getUserProfile({
-                desc: '授权将用于完善用户资料',
-                success: res => {
-                  this.setData({  //用户设置
-                    userInfo: res.userInfo,
-                    hasUserInfo: true
-                  })
-                  wx.setStorage({ //将数据存储在本地缓存中指定的 key 中
-                    key: "Userinfo",  //本地缓存中指定的key
-                    data: this.data.userInfo  //需要储存的内容
-                  })
-                  wx.switchTab({  //界面跳转到指定页面，这里要跳转到我们的广场
-                    /*************这里做好后要填起来填************/
-                    url: 'url',
-                  })
-                }
-              })
-            },
-            fail: err => {  //接口调用失败
-              console.error('[云函数] [login] 调用失败', err)
-              wx.showToast({
-                title: '云函数：调用失败',
-                icon: 'none',
-                duration: 2000
-              })
-            }
-          })
-        }
-        else{
-          wx.redirectTo({ //关闭当前页面，并跳转到指定页面，这里要跳到登录页面
-            /*************这里做好后要填起来填************/
-            url: 'url',
-          })
-        }
-      },
-    })
+  },
+  getUserInfo(e) {
+      // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，且返回匿名的用户个人信息
+      this.setData({
+          userInfo: e.detail.userInfo,
+          hasUserInfo: true
+      })
   },
 })
