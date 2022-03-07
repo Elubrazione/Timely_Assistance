@@ -10,7 +10,7 @@ Page({
           this.setData({
               canIUseGetUserProfile: true
           })
-      }
+        }
   },
   getUserProfile(e) {
       // 使用wx.getUserProfile获取用户信息 开发者每次通过该接口获取用户个人信息均需用户确认
@@ -24,11 +24,17 @@ Page({
                   userInfo: res.userInfo,
                   hasUserInfo: true
               })
+              wx.setStorage({
+                key: "userInfo",
+                data: this.data.userInfo
+              })
+              wx.switchTab({
+                url: '../my/my',
+              })
           }
       })
   },
   getUserInfo(e) {
-      // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，且返回匿名的用户个人信息
       this.setData({
           userInfo: e.detail.userInfo,
           hasUserInfo: true
