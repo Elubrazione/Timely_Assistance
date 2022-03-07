@@ -23,7 +23,7 @@
       },
       {
         "pagePath": "pages/main_message/main_message",
-        "text": "消息中心",
+        "text": "我的消息",
         "iconPath": "icon/_search.png",
         "selectedIconPath": "icon/search.png"
       },
