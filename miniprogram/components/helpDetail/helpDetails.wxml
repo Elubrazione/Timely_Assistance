@@ -1,0 +1,15 @@
+<!--components/helpDetail/helpDetails.wxml-->
+<view class="user">
+  <view class="content">
+    <view>
+      <image src="../../icon/user-unlogin.png" class="userimg"></image>
+      <view class="userid">
+        <text class="useridea">userid</text>
+      </view>
+    </view>
+    <view class="info_details">
+      <view class="mescontent">
+      </view>
+    </view>
+  </view>
+</view>

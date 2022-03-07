@@ -1,7 +1,1 @@
-<!--index.wxml-->
-
-<view>
-  <searchBar inner-text="" class="searchbar">
-    <view>哈哈</view>
-  </searchBar>
-</view>
+<!--pages/index/index.wxml-->

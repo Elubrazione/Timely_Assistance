@@ -1,6 +1,9 @@
-
 {
-    "usingComponents":{
-      "searchBar":"../../components/searchBar/searchBar"
-    }
-  }
+  "usingComponents": {
+    
+  },
+  "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "帮帮忙",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true
+}

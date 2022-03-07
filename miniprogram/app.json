@@ -1,24 +1,14 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/output/output",
     "pages/my/my",
-    "pages/getOpenId/index",
-    "pages/getMiniProgramCode/index",
-    "pages/deployService/index",
-    "pages/createCollection/index",
-    "pages/uploadFile/index",
-    "pages/selectRecord/index",
-    "pages/updateRecord/index",
-    "pages/updateRecordResult/index",
-    "pages/updateRecordSuccess/index",
-    "pages/sumRecord/index",
-    "pages/sumRecordResult/index"
+    "pages/main_message/main_message",
+    "pages/square/square"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#44cef6",
+    "navigationBarBackgroundColor": "#eb993c",
     "navigationBarTitleText": "帮帮忙",
     "enablePullDownRefresh": true,
     "navigationBarTextStyle": "black"
@@ -26,24 +16,24 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/square/square",
         "text": "帮助广场",
         "iconPath": "icon/_home.png",
-        "selectedIconPath":"icon/home.png"
+        "selectedIconPath": "icon/home.png"
       },
       {
-        "pagePath": "pages/output/output",
+        "pagePath": "pages/main_message/main_message",
         "text": "我的消息",
         "iconPath": "icon/_search.png",
-        "selectedIconPath":"icon/search.png"
+        "selectedIconPath": "icon/search.png"
       },
       {
-      "pagePath": "pages/my/my",
-      "text": "个人中心",
-      "iconPath": "icon/_my.png",
-      "selectedIconPath":"icon/my.png"
-    }
-  ]
+        "pagePath": "pages/my/my",
+        "text": "个人中心",
+        "iconPath": "icon/_my.png",
+        "selectedIconPath": "icon/my.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"

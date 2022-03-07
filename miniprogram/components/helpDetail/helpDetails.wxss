@@ -1,0 +1,56 @@
+/* components/helpDetail/helpDetails.wxss */
+/* 广场信息框 */
+.user{
+  display: flex;
+  height: 220rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.content{
+  display: flex;
+  height: 200rpx;
+  width: 40rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  background: rgb(253, 235, 179);
+  border-radius: 16rpx;
+  border: 3rpx solid rgb(202, 160, 104);
+  flex: 1;
+}
+.userimg{
+  padding-top: 15rpx;
+  height: 110rpx;
+  width: 110rpx;
+  padding-left: 0rpx;
+}
+.userid{
+  height: 20rpx;
+}
+.useridea{
+  padding-top: 0rpx;
+}
+.container{
+  display: flex;
+  padding-top: 50rpx;
+}
+/* components/helpDetail/details/details.wxss */
+.info_details{
+  height: 180rpx;
+  width: 550rpx;
+  padding-left: 0rpx;
+  padding-top: 22rpx;
+  display: flex;
+}
+.mescontent{
+  display: flex;
+  height: 150rpx;
+  width: 400rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx; 
+  /* padding: 50rpx 10rpx; */
+  background: rgb(250, 188, 159);
+  border-radius: 16rpx;
+  /* border: 4rpx solid rgb(201, 110, 57); */
+  flex: 1;
+  align-items: center;
+}
