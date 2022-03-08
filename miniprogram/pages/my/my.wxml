@@ -2,7 +2,7 @@
 
 <image class='Userhead' src='{{User_head_url}}' bindtap='uploadhead'></image>
 
-<view class='text-xl text-xl' bindtap="modalinput">
+<view class='text-xl'>
 {{Username}}
 </view>
 <text>已加入{{Join_Time}}天</text>
