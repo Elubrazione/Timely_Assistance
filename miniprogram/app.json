@@ -1,40 +1,41 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/square/square",
-    "pages/my/my",
-    "pages/main_message/main_message"
-  ],
-  "window": {
-    "backgroundColor": "#F6F6F6",
-    "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#eb993c",
-    "navigationBarTitleText": "帮帮忙",
-    "enablePullDownRefresh": true,
-    "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/square/square",
-        "text": "帮助广场",
-        "iconPath": "icon/_home.png",
-        "selectedIconPath": "icon/home.png"
-      },
-      {
-        "pagePath": "pages/main_message/main_message",
-        "text": "我的消息",
-        "iconPath": "icon/_search.png",
-        "selectedIconPath": "icon/search.png"
-      },
-      {
-        "pagePath": "pages/my/my",
-        "text": "个人中心",
-        "iconPath": "icon/_my.png",
-        "selectedIconPath": "icon/my.png"
-      }
-    ]
-  },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2"
+    "pages": [
+        "pages/index/index",
+        "pages/my/my",
+        "pages/main_message/main_message",
+        "pages/square/square",
+        "pages/chat/chat"
+    ],
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#eb993c",
+        "navigationBarTitleText": "帮帮忙",
+        "enablePullDownRefresh": true,
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/square/square",
+                "text": "帮助广场",
+                "iconPath": "icon/_home.png",
+                "selectedIconPath": "icon/home.png"
+            },
+            {
+                "pagePath": "pages/main_message/main_message",
+                "text": "消息中心",
+                "iconPath": "icon/_search.png",
+                "selectedIconPath": "icon/search.png"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "text": "个人中心",
+                "iconPath": "icon/_my.png",
+                "selectedIconPath": "icon/my.png"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json",
+    "style": "v2"
 }

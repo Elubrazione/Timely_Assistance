@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "searchBar":"../../components/searchBar/searchBar",
+    "helpDetails":"../../components/helpDetail/helpDetails"
+  }
 }
