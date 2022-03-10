@@ -2,5 +2,6 @@
   "usingComponents": {
     "searchBar":"../../components/searchBar/searchBar",
     "helpDetails":"../../components/helpDetail/helpDetails"
-  }
+  },
+  "navigationBarTitleText": "我的消息"
 }

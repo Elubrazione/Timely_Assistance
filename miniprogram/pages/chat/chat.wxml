@@ -1,33 +1,32 @@
 <!--pages/chat/chat.wxml-->
-
-<view wx:for="{{allmessage}}" >
-  <view wx:if="{{item.sender == myname}}">
+<scroll-view id='body-view' wx:for="{{allmessage}}">
+  <view wx:if="{{item.sender == myid}}">
     <view class="onechat1">
+      <view class="nothing"></view>
       <view class="rightpart">
-        <view class="username1">{{item.sender}}</view>
+        <view class="username1">{{myname}}</view>
         <view class="out">
           <view class="content">{{item.content}}</view>
         </view>
       </view>
-      <view><image src="../../icon/user-unlogin.png" class="chatimg"></image></view>
+      <view><image src="{{myface_url}}" class="chatimg"></image></view>
     </view>
   </view>
-  <view wx:if="{{item.sender == yourname}}">
+  <view wx:else>
     <view class="onechat2">
-      <view><image src="../../icon/user-unlogin.png" class="chatimg"></image></view>
+      <view><image src="{{yourface_url}}" class="chatimg"></image></view>
       <view class="rightpart">
-        <view class="username2">{{item.sender}}</view>
+        <view class="username2">{{yourname}}</view>
         <view class="out">
           <view class="content">{{item.content}}</view>
         </view>
       </view>
+      <view class="nothing"></view>
     </view>
   </view>
-</view>
+</scroll-view>
 
-
-
-<view style="height:130rpx;"></view>
+<!-- <view style="height:130rpx;"></view> -->
   <form bindsubmit="formSubmit" style="position:fixed;bottom:0;">
     <view class='buttom'>
       <view class='inp'>
