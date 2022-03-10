@@ -7,10 +7,10 @@
 <view class="block"></view>
 
 <view wx:for="{{chatlist}}">
-    <view class="chat" bindtap="switch">
+    <view class="chat" bindtap="switch" data-you="{{item}}">
         <view class="chatcontent">
             <view>
-                <image src="../../icon/user-unlogin.png" class="userimg"></image>
+                <image src="{{item.userimg}}" class="userimg"></image>
             </view>
             <view class="leftpart">
                 <view class="name">{{item.username}}</view>
