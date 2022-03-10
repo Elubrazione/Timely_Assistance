@@ -10,28 +10,27 @@
 
 </view>
 <view class='three_button_view' >
-<view class='three_button_view_in' bindtap="discussbutton">
-
+<view class='three_button_view_in' bindtap="favor_button">
   <view>
-    <image src='../../icon/collection.png' style='width:60rpx;height:60rpx'></image>
+    <image src='../../icon/collection.png' style="width: 60rpx; height: 60rpx; position: relative; left: 3rpx; top: 5rpx"></image>
   </view>
-  <view style='margin-top:10rpx'>
+  <view  style='margin-top:10rpx'>
  收藏
   </view>
 </view>
 
- <view class='three_button_view_in'  bindtap="chatbutton">
+ <view class='three_button_view_in'  bindtap="upbutton">
   <view>
-    <image src='../../icon/up.png' style='width:60rpx;height:60rpx'></image>
+    <image src='../../icon/up.png' style="width: 60rpx; height: 60rpx; position: relative; left: 3rpx; top: 3rpx"></image>
   </view>
   <view style='margin-top:10rpx'>
   点赞
   </view>
 </view>
 
-<view class='three_button_view_in'  bindtap="upbutton">
+<view class='three_button_view_in'  bindtap="footbutton">
   <view>
-    <image src='../../icon/foot.png' style='width:60rpx;height:60rpx'></image>
+    <image src='../../icon/foot.png' style="width: 60rpx; height: 60rpx; position: relative; left: 5rpx; top: 5rpx"></image>
   </view>
   <view style='margin-top:10rpx'>
  足迹
@@ -79,7 +78,7 @@
       <image src='/icon/announce.png' style='width:50rpx;height:50rpx'></image>
     </view>
     <view class='list_button_text' bindtap='ShowAboutus'>
-     TA公约
+     关于我们
     </view>
     <view class='list_button_jiantou'>
     ></view>
