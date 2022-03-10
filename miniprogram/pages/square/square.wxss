@@ -565,3 +565,16 @@ page {
    background:rgba(238,238,238,1);
    margin-top: 20rpx;
  }
+ .add{
+  display:flex;
+  position: fixed;
+  bottom: 135rpx;
+  right: 140rpx;
+ }
+ .add_tie{
+   width: 115rpx;
+   height: 115rpx;
+   display:flex;
+   position: fixed;
+   z-index: 999;
+ }

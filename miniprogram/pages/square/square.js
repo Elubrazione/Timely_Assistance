@@ -1,4 +1,4 @@
-// index.js
+// index.js 假设不允许重名
 var app = getApp()
 var util=require('../../utils/util.js');
 var UserIdArry = new Array()
@@ -7,7 +7,7 @@ var SellUserId = new Array()
 var SellUserUpId = new Array()
 Page({
   data: {
-    navbar: ['畅所欲言', '交易市场'],
+    navbar: ['互帮互助', '交易市场'],
     currentTab: 0,
     SellDataPostArry:[],
     SellUserHeadurlArry:[],
@@ -17,12 +17,24 @@ Page({
     UserHeadurlArry:[],
     UpArray: [],
     UsernameArry: [],
-    UserId:'',//app.globalData.openid
+    UserNickname: '',
     replyData: []
   },
     /** 
      * 预览图片
      */
+  // getUserNickname: function(e){
+  //   wx.getStorage({
+  //     key: 'UserInfo',
+  //     success: res => {
+  //       UserNickname: res.data.Nickname
+  //       console.log(UserNickname)
+  //     },
+  //     fail: err => {
+  //       console.log('error: ', err)
+  //     }
+  //   })
+  // },
   previewImage: function (e) {
     //var current = e.target.dataset.src;
     wx.previewImage({
@@ -35,15 +47,15 @@ Page({
       currentTab: e.currentTarget.dataset.idx
     })
     if (e.currentTarget.dataset.idx==0)
-    {this.get_DBinf();}
+      {this.get_DBinf();}
     else
-    {this.get_Sell_DBinf();}
+      {this.get_Sell_DBinf();}
   },
 
   onLoad(){
     let that=this
     wx.getStorage({
-      key: 'Userinfo',
+      key: 'userInfo',
       success(res) {
         //console.log(res.data) //userinfo
       }
@@ -55,15 +67,12 @@ Page({
   },
 
   wanttobuy:function(e){
-
     var that = this
     var buyind = e.currentTarget.dataset.buyindex
 
     //console.log("buyind:" + buyind);
 
     const buypostopenid = e.currentTarget.dataset.buypostopenid
-
-
     if (this.data.SellUpArray[buyind] == 0)//说明没点赞过
     {
 
@@ -71,7 +80,7 @@ Page({
       this.setData({
         [nowup]: 1
       })
-      const db = wx.cloud.database({ env: 'textllinpro-5br77' })
+      const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
       return db.collection('Assistant_Sell_Intention').add({ //添加帖子
         data: {
           buy_Post_id: e.currentTarget.dataset.buypost_id,
@@ -125,7 +134,7 @@ Page({
       this.setData({
         [nowup]: 1
       })
-      const db = wx.cloud.database({ env: 'textllinpro-5br77' })
+      const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
       return db.collection('Assistant_Up').add({ //添加帖子
         data: {
           Up_Post_id: e.currentTarget.dataset.post_id,
@@ -223,7 +232,7 @@ Page({
       data: that.data.replyData
     })
     wx.navigateTo({
-      url: '../Reply_page/Reply_page',
+      url: '../reply/reply',
     
     })
   },
@@ -410,6 +419,10 @@ get_Sell_DBinf:function(){
       }
     })
   },
-
+  releasefunc(){
+    wx.switchTab({
+      url: '../my/my',
+    })
+  },
 })
 
