@@ -22,6 +22,7 @@
     <view class="navbar"> 
       <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text> 
     </view> 
+    <view class='add'><image src='../../icon/release button.svg' class='add_tie' bindtap="releasefunc"></image></view>
     <view hidden="{{currentTab!==0}}"> 
       <view wx:for="{{DataPostArry.length}}" wx:key='DataPostArry.length' class = 'item-contain' ><!--循环生成body-->
         <view class='top'>
