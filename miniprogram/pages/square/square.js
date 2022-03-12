@@ -100,7 +100,7 @@ Page({
             that.get_Sell_DBinf()
             wx.showToast({
               title: '已意向购买',
-              image: '../../images/Up_heart.png',
+              image: '../../icon/Up_heart.png',
               duration: 2000
             })
           },
@@ -113,7 +113,7 @@ Page({
     else {
       wx.showToast({
         title: '已意向购买',
-        image: '../../images/buy.png',
+        image: '../../icon/buy.png',
         duration: 2000
       })
     }
@@ -154,7 +154,7 @@ Page({
             that.get_DBinf()
             wx.showToast({
               title: '已点赞',
-              image: '../../images/Up_heart.png',
+              image: '../../icon/Up_heart.png',
               duration: 2000
             })
           },
@@ -167,7 +167,7 @@ Page({
     else{
       wx.showToast({
         title: '已点赞过',
-        image: '../../images/Up_heart2.png',
+        image: '../../icon/Up_heart2.png',
         duration: 2000
       })
     }
