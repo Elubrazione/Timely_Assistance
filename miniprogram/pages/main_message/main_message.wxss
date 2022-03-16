@@ -29,9 +29,10 @@ page {
 }
 
 .userimg{
-  padding-top: 5rpx;
-  height: 130rpx;
-  width: 130rpx;
+  border-radius: 50%;
+  margin-top: 15rpx;
+  height: 110rpx;
+  width: 110rpx;
   padding-left: 0rpx;
 }
 

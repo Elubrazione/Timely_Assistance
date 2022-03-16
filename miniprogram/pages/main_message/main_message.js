@@ -34,8 +34,16 @@ Page({
   switch: function (e) {
     // console.log(e.currentTarget.dataset.you)
     wx.setStorage({
-      data: e.currentTarget.dataset.you,
-      key: 'you',
+      data: e.currentTarget.dataset.you.username,
+      key: 'yourname',
+    })
+    wx.setStorage({
+      data: e.currentTarget.dataset.you.userimg,
+      key: 'yoururl',
+    })
+    wx.setStorage({
+      data: e.currentTarget.dataset.you.userid,
+      key: 'yourid',
     })
     wx.navigateTo({
       url: '../chat/chat',

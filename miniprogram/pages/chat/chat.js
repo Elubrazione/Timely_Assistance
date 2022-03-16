@@ -14,7 +14,7 @@ Page({
         Time: '',
 
         myface_url:"",
-        myid:"heloo",
+        myid:"",
         myname:"",
 
         yourface_url:"",
@@ -71,16 +71,32 @@ Page({
             }
           })
         wx.getStorage({
-            key: 'you',
+            key: 'yourname',
             success(res){
               console.log(res.data) //userinfo
               that.setData({
-                yourface_url:res.data.userimg,
-                yourid:res.data.userid,
-                yourname:res.data.username
+                yourname:res.data
               })
             }
         })
+        wx.getStorage({
+          key: 'yoururl',
+          success(res){
+            console.log(res.data) //userinfo
+            that.setData({
+              yourface_url:res.data
+            })
+          }
+      })
+        wx.getStorage({
+          key: 'yourid',
+          success(res){
+            console.log(res.data) //userinfo
+            that.setData({
+              yourid:res.data
+            })
+          }
+      })
     },
     
 
@@ -194,7 +210,13 @@ Page({
      */
     onUnload: function () {
         wx.removeStorage({
-            key: 'you',
+            key: 'yourid',
+          })
+          wx.removeStorage({
+            key: 'yourname',
+          })
+          wx.removeStorage({
+            key: 'yoururl',
           })
     },
 

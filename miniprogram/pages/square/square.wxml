@@ -39,6 +39,9 @@
           </view>
           <view class='hidden_buttom'>
             <view class='b_1'><text>{{DataPostArry[index].Type}}</text></view>
+            <block wx:if="{{DataPostArry[index]._openid!=UserId}}"> 
+              <view class='b_11' bindtap='onechat' data-yourid="{{DataPostArry[index]._openid}}" data-yourname="{{UsernameArry[index]}}" data-yoururl="{{UserHeadurlArry[index]}}"><image src='../../icon/rep.png'></image><label>私聊</label></view>
+            </block>
             <block wx:if="{{DataPostArry[index]._openid==UserId}}"> 
               <view class='b_11' bindtap='Remove_Post' data-post_id="{{DataPostArry[index]._id}}" data-postopenid="{{DataPostArry[index]._openid}}" data-nowIndex="{{index}}"><image src='../../icon/del1.jpeg'></image><label>删除</label></view>
             </block>

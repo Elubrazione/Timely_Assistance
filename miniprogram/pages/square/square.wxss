@@ -271,7 +271,7 @@ page {
  }
  
  .b_1{
-   width: 400rpx;
+   width: 350rpx;
    display: table-cell;
    justify-content: center;
  }
@@ -283,6 +283,7 @@ page {
  .b_11{
    margin-right: 40rpx;
  }
+
  .b_11_2{
    margin-right: 100rpx;
  }

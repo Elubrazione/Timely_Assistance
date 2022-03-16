@@ -173,6 +173,24 @@ Page({
     }
   },
 
+  onechat:function(e){
+      console.log(e)
+      wx.setStorage({
+        data: e.currentTarget.dataset.yourname,
+        key: 'yourname',
+      })
+      wx.setStorage({
+        data: e.currentTarget.dataset.yoururl,
+        key: 'yoururl',
+      })
+      wx.setStorage({
+        data: e.currentTarget.dataset.yourid,
+        key: 'yourid',
+      })
+      wx.navigateTo({
+        url: '../chat/chat',
+      })
+  },
 
   Remove_Post:function(e){
     let that = this
