@@ -43,7 +43,6 @@ Page({
       sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
       success: function (res) {
-      
         that.setData({
           Filepath: res.tempFilePaths,
           number: res.tempFilePaths.length + 1
@@ -121,7 +120,7 @@ Page({
             success: function () {
               console.log(res)
               wx.switchTab({
-                url: '../my/my',
+                url: '../square/square',
               })
             }
           })

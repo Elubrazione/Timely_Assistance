@@ -111,12 +111,9 @@ Page({
               title: '成功',
               icon: 'success',
               duration: 1000,
-              success: function () {
-                console.log(res)
-                wx.switchTab({
-                  url: '../index/index',
-                })
-              }
+            })
+            wx.switchTab({
+              url: '../square/square',
             })
           }).catch((ex) => {
             console.log(ex);
@@ -145,7 +142,7 @@ Page({
             success: function () {
               console.log(res)
               wx.switchTab({
-                url: '../index/index',
+                url: '../square/square',
               })
             }
           })
