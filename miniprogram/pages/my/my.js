@@ -129,7 +129,7 @@ footbutton: function () {
     footNumber: 0
   })
   wx.navigateTo({
-    url: '../mine_comment/mine_comment',
+    url: '../mine_foot/mine_foot',
   })
 },
   
@@ -152,10 +152,10 @@ footbutton: function () {
       url: '../mine_mysell/mine_mysell',
     })
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
-
   onLoad: function (options) {
     let that=this
     //获取头像和名字
@@ -168,13 +168,14 @@ footbutton: function () {
           Username:res.data.nickName,
           User_head_url:res.data.avatarUrl
         })
+        // console.log(res.data.nickName)
       }
     })
     wx.hideTabBarRedDot({
       index: 1,//隐藏了消息中心的红点
     })
     let Nowtime=Date.now();
-    console.log(Nowtime);
+    // console.log(Nowtime);
     db.collection('Assistant_User').where({
       _openid: wx.getStorageSync("myOpenId"),
     }).get({
@@ -242,7 +243,7 @@ footbutton: function () {
             }
           }
         })
-      }//end of User_success
+      }//end of Usersuccess
     })
   }
 })
