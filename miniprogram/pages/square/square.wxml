@@ -40,16 +40,16 @@
           <view class='hidden_buttom'>
             <view class='b_1'><text>{{DataPostArry[index].Type}}</text></view>
             <block wx:if="{{DataPostArry[index]._openid==UserId}}"> 
-              <view class='b_11' bindtap='Remove_Post' data-post_id="{{DataPostArry[index]._id}}" data-postopenid="{{DataPostArry[index]._openid}}" data-nowIndex="{{index}}"><image src='../../icon/del1.png'></image><label>删除</label></view>
+              <view class='b_11' bindtap='Remove_Post' data-post_id="{{DataPostArry[index]._id}}" data-postopenid="{{DataPostArry[index]._openid}}" data-nowIndex="{{index}}"><image src='../../icon/del1.jpeg'></image><label>删除</label></view>
             </block>
             <block wx:else>
               <view class='b_11_2'></view>
             </block>
             <block wx:if="{{UpArray[index]==0}}">
-              <view class='b_2' bindtap='upclickbutton' data-post_id="{{DataPostArry[index]._id}}" data-postopenid="{{DataPostArry[index]._openid}}" data-nowIndex="{{index}}"><image src='../../icon/dz.png'></image></view>
+              <view class='b_2' bindtap='upclickbutton' data-post_id="{{DataPostArry[index]._id}}" data-postopenid="{{DataPostArry[index]._openid}}" data-nowIndex="{{index}}"><image src='../../icon/dz.jpeg'></image></view>
             </block>
             <block wx:else>
-              <view class='b_2' bindtap='upclickbutton' data-post_id="{{DataPostArry[index]._id}}" data-postopenid="{{DataPostArry[index]._openid}}" data-nowIndex="{{index}}"><image src='../../icon/Up_heart.png'></image></view>
+              <view class='b_2' bindtap='upclickbutton' data-post_id="{{DataPostArry[index]._id}}" data-postopenid="{{DataPostArry[index]._openid}}" data-nowIndex="{{index}}"><image src='../../icon/Up_heart.jpeg'></image></view>
             </block>
             <view class='b_3'><label>{{DataPostArry[index].Up_Record_num}}</label></view>
             <view class='b_4' bindtap='to_Reply' data-post_id="{{DataPostArry[index]._id}}" data-postopenid="{{DataPostArry[index]._openid}}" data-nowIndex="{{index}}"><image src='../../icon/reply.jpeg'></image></view>

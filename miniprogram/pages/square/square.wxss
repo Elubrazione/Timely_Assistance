@@ -255,7 +255,7 @@ page {
  }
  
  .main image:nth-child(1){
-   margin-bottom: 5rpx;
+   margin-bottom: 7rpx;
  }
  
  .hidden_buttom {

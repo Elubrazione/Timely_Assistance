@@ -100,7 +100,7 @@ Page({
             that.get_Sell_DBinf()
             wx.showToast({
               title: '已意向购买',
-              image: '../../icon/Up_heart.png',
+              image: '../../icon/Up_heart.jpeg',
               duration: 2000
             })
           },
@@ -154,7 +154,7 @@ Page({
             that.get_DBinf()
             wx.showToast({
               title: '已点赞',
-              image: '../../icon/Up_heart.png',
+              image: '../../icon/Up_heart.jpeg',
               duration: 2000
             })
           },
@@ -251,7 +251,7 @@ Page({
           UserId: res.data
         })
         ////
-        var db = wx.cloud.database()//{ env: 'textllinpro-5br77' }
+        var db = wx.cloud.database()
         let userid = res.data;
         //console.log("My openid:"+userid);
         db.collection('Assistant_Up').where({//获取自己的点赞列表
@@ -420,8 +420,24 @@ get_Sell_DBinf:function(){
     })
   },
   releasefunc(){
-    wx.switchTab({
-      url: '../my/my',
+    wx.showModal({
+      title: '请选择发布主题',
+      content: '发布求助信息请选择“互帮互助”；发布买卖信息请选择“二手交易”',
+      cancelText: '互帮互助',
+      cancelColor: "#000000",
+      confirmText: '二手交易',
+      confirmColor: "#000000",
+      success: function(res) {
+        if(res.cancel){
+          wx.navigateTo({
+            url: '../creat_message/creat_message'
+          })
+        }else{
+          wx.redirectTo({
+            url: '../creat_sell_post/creat_sell_post',
+          })
+        }
+      }
     })
   },
 })

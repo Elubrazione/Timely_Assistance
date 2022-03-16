@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/square/square",
     "pages/index/index",
     "pages/my/my",
     "pages/main_message/main_message",
-    "pages/square/square",
     "pages/chat/chat",
     "pages/mine_favor/mine_favor",
     "pages/mine_up/mine_up",
@@ -11,6 +11,7 @@
     "pages/mine_mypost/mine_mypost",
     "pages/mine_mysell/mine_mysell",
     "pages/reply/reply",
+    "pages/creat_message/creat_message",
     "pages/creat_sell_post/creat_sell_post"
   ],
   "window": {

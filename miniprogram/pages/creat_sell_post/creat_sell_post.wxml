@@ -38,7 +38,7 @@
   <view class='price'>
     <view class='vw_price'><text>价格:</text></view>
     <view class='vw_inputprice'><input class='addprice' name='price' bindinput='getPriceinput'  placeholder='输入价格（仅支持整数）' cursor-spacing='140'></input></view>
-    <view class='vw_image'><image src='../../icon/rmb.png'></image></view>
+    <view class='vw_image'><image src='../../icon/money.jpeg'></image></view>
   </view>
   <view class='sort'>
     <view class='vw_sort'><text>分类:</text></view>
