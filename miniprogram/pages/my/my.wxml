@@ -30,10 +30,10 @@
 
 <view class='three_button_view_in'  bindtap="footbutton">
   <view>
-    <image src='../../icon/foot.png' style="width: 60rpx; height: 60rpx; position: relative; left: 5rpx; top: 5rpx"></image>
+    <image src='../../icon/rep.png' style="width: 60rpx; height: 60rpx; position: relative; left: 5rpx; top: 5rpx"></image>
   </view>
   <view style='margin-top:10rpx'>
- 足迹
+ 评论
   </view>
 </view>
 </view>

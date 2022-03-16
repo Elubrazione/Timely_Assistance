@@ -129,7 +129,7 @@ footbutton: function () {
     footNumber: 0
   })
   wx.navigateTo({
-    url: '../mine_foot/mine_foot',
+    url: '../mine_comment/mine_comment',
   })
 },
   
