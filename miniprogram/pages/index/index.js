@@ -41,6 +41,16 @@ Page({
                 key: "userInfo",
                 data: this.data.userInfo
               })
+              const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
+              db.collection('Assistant_User').add({ //添加人
+                data: {
+                  Username: res.userInfo.nickName,
+                  Last_to_Reply: Date.now(),
+                  Last_toup_Time: Date.now(),
+                  User_head_url: res.userInfo.avatarUrl,
+                  Creat_user_Time: Date.now()
+                }
+              }) 
               wx.switchTab({
                 url: '../my/my',
               })
