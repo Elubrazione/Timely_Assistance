@@ -70,18 +70,14 @@ Page({
   //收藏
   favor_button: function () {
     var data = new Date()
-    wx.cloud.callFunction({ //是每次进去后更新的favor
-      name: 'upDatefavor',
+    db.collection("Assistant_User").where({
+      _openid:wx.getStorageSync("myOpenId")
+    }).update({
       data: {
-        youid: wx.getStorageSync("myOpenId"),
-        time: data.getTime()
+        Last_to_favor:data.getTime()
       },
-      success: function (res) {
-        console.log(res, "+++++++++++++")
-      },
-      fail:function(res){
-        console.log(res)
-      }
+    }).then(res=>{
+      console.log(res)
     })
     this.setData({ 
       favorNumber: 0
@@ -100,15 +96,14 @@ Page({
   upbutton: function () {
     var data = new Date()
     console.log(wx.getStorageSync("myOpenId"), "--------", data)
-    wx.cloud.callFunction({
-      name: 'upDateUp',
+    db.collection("Assistant_User").where({
+      _openid:wx.getStorageSync("myOpenId")
+    }).update({
       data: {
-        youid: wx.getStorageSync("myOpenId"),
-        time: data.getTime()
+        Last_to_up:data.getTime()
       },
-      success: function (res) {
-        console.log(res, "-------------")
-      }
+    }).then(res=>{
+      console.log(res)
     })
     this.setData({
       toupNumber: 0
@@ -119,21 +114,20 @@ Page({
   },
 //足迹
 footbutton: function () {
-  // var data = new Date()
-  // console.log(wx.getStorageSync("myOpenId"), "--------", data)
-  // wx.cloud.callFunction({
-  //   name: 'upDatefoot',
-  //   data: {
-  //     youid: wx.getStorageSync("myOpenId"),
-  //     time: data.getTime()
-  //   },
-  //   success: function (res) {
-  //     console.log(res, "-------------")
-  //   }
-  // })
-  // this.setData({
-  //   footNumber: 0
-  // })
+  var data = new Date()
+  console.log(wx.getStorageSync("myOpenId"), "--------", data)
+  db.collection("Assistant_User").where({
+    _openid:wx.getStorageSync("myOpenId")
+  }).update({
+    data: {
+      Last_to_foot:data.getTime()
+    },
+  }).then(res=>{
+    console.log(res)
+  })
+  this.setData({
+    footNumber: 0
+  })
   wx.navigateTo({
     url: '../mine_foot/mine_foot',
   })
@@ -193,7 +187,7 @@ footbutton: function () {
         else{
           Nowtime=parseInt((Nowtime - res.data[0].Creat_user_Time) / 86400000)+1
         }
-        console.log(Nowtime)
+       // console.log(Nowtime)
         that.setData({
           //Username:res.data[0].Username,
           //User_head_url:res.data[0].User_head_url,
@@ -203,10 +197,11 @@ footbutton: function () {
           Join_Time: Nowtime
         })
         console.log(res);
-        db.collection('Assistant_Up').where({
+        db.collection("Assistant_Up").where({
           Up_id: wx.getStorageSync("myOpenId"),
         }).get({
           success: res => {
+            console.log(res);
             for (var i = 0; i < res.data.length; i++) {
              console.log("#######", res.data[i].Time_s)
              console.log(that.data.Last_to_up)
@@ -249,5 +244,5 @@ footbutton: function () {
         })
       }//end of User_success
     })
-  },
+  }
 })

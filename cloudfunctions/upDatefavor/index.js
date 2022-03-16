@@ -8,14 +8,16 @@ const _ = db.command
 exports.main = async (event, context) => {
   const youOpenid = event.youid
   const nowTime = event.time
-  console.log(event)
-  return db.collection('Assistant_User').where({
-    _openid: youOpenid
-  }).update({
-    data: {
-      Last_to_favor : nowTime
-    },
-  }).then(res => {
-    console.log(res)
-  })
+  try {
+    return await db.collection('Assistant_User').where({
+      _openid=youOpenid
+    })
+    .update({
+      data: {
+        Last_to_favor:nowTime
+      },
+    })
+  } catch(e) {
+    console.error(e)
+  }
 }
