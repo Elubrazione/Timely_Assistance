@@ -103,7 +103,6 @@ Page({
     formSubmit: function (e) {
       var that = this;
       if(!e.detail.value.userName) return
-      this.pageScrollToBottom()
       console.log(e);
       this.setData({
         inputMessage: e.detail.value.userName,
@@ -153,7 +152,7 @@ Page({
           }
         },
       })
-
+      this.pageScrollToBottom()
     },
 
     /**
@@ -182,20 +181,6 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-      var that=this
-      this.pageScrollToBottom();
-      wx.cloud.database().collection('Chat_Record').where({
-        userid: _.all([that.data.myid,that.data.yourid])
-      }).get({
-        success:function(res){
-          console.log(res);
-          if(res.data.length){
-            that.setData({
-              allmessage:res.data[0].messages
-            })
-          }
-        }
-      })
     },
 
     /**
