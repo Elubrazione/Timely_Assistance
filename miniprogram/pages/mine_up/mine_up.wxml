@@ -26,12 +26,11 @@
     <view class='name_view'>
     <block wx:if="{{flag==0}}">
       <text style='color:rgb(255, 187, 0)'>{{upList[index].userName}} </text>
-      点赞了我的帖子
+      点赞了我
     </block>
     <block wx:else>
     我点赞了
      <text style='color:rgb(255, 187, 0)'>{{upList[index].userName}}</text>
-      帖子
     </block>
     </view>
 

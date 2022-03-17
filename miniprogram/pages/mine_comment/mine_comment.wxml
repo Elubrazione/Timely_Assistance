@@ -25,12 +25,11 @@
     <view class='name_view'>
     <block wx:if="{{flag==0}}">
       <text style='color:rgb(255, 187, 0)'>{{discussList[index].postUserName}} </text>
-      评论我的帖子
+      评论了我
     </block>
     <block wx:else>
     我评论了
      <text style='color:rgb(255, 187, 0)'>{{discussList[index].postUserName}}</text>
-      帖子
     </block>
     </view>
 

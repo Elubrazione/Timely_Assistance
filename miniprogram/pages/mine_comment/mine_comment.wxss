@@ -92,11 +92,13 @@ two_view
 {
   height:100rpx;
   width:400rpx;
-  display: flex;
+  display: inline-flex;
   font-size:28rpx;
   align-items:center;
   border-radius: 10rpx;
   background:#efefef;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .image_view
 {
