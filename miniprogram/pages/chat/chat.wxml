@@ -25,6 +25,7 @@
     </view>
   </view>
 </scroll-view>
+<view class="bblock"></view>
 
 <!-- <view style="height:130rpx;"></view> -->
   <form bindsubmit="formSubmit" style="position:fixed;bottom:0;">

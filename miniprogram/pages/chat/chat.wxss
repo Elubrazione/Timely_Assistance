@@ -76,6 +76,10 @@
   .block{
     padding-left: 20rpx;
   }
+
+  .bblock{
+    padding-bottom: 130rpx;
+  }
   
   .inp{
     width: 2600rpx;
