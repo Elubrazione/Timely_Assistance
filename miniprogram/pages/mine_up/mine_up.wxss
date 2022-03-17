@@ -88,6 +88,8 @@
   align-items:center;
   border-radius: 10rpx;
   background:#efefef;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .image_view
 {
