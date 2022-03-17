@@ -2,19 +2,23 @@
 .head_view{
   background: white;
   width: 100%;
-  height: 350rpx;
+  height: 450rpx;
   margin-top: 20rpx;
   justify-content: center;
   align-items: center;
   display: flex;
 }
-
+.textinput
+{
+  overflow: scroll;
+  padding-right: 50rpx;
+}
 .text_view
 {
 
-  margin-top: 40rpx;
-  height: 200rpx;
-  width: 80%;
+  margin-top: 15rpx;
+  height: 420rpx;
+  width: 90%;
   color: #8a8a8a;
 }
 
@@ -74,7 +78,7 @@ font-size: 32rpx;
 .button_view
 {
   position: absolute;
-  bottom: 80rpx;
+  bottom: 25rpx;
   width: 100%;
   height: 100rpx;
   align-items: center;

@@ -1,7 +1,7 @@
 <!--pages/creat_message/creat_message.wxml-->
 <view class='head_view'>
  <view class="text_view">
-    <textarea placeholder="请填写话题内容 (不少于2个字)" auto-focus maxlength="50" auto-focus="{{false}}" bindinput="getInput"/>
+    <textarea placeholder="请填写话题内容 (不少于2个字)" auto-focus maxlength="1037" auto-focus="{{false}}" class="textinput" bindinput="getInput"/>
   </view>
 </view>
 
