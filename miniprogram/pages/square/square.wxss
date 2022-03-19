@@ -204,8 +204,8 @@ page {
  }
  
  .userphoto image{
-   width: 86rpx;
-   height: 86rpx;
+   width: 68rpx;
+   height: 68rpx;
    border-radius:50%; 
  }
  
@@ -225,8 +225,8 @@ page {
  
  
  .hidden_second{
-   margin-top: 20rpx;
-   margin-left: 135rpx;
+   margin-top: 0rpx;
+   margin-left: 105rpx;
    width: 80%;
  }
  
@@ -241,7 +241,7 @@ page {
  
  .hidden_third{
    margin-top: 20rpx;
-   margin-left: 135rpx;
+   margin-left: 105rpx;
    width: 80%;
    display: flex;
    flex-wrap: wrap;
@@ -379,7 +379,7 @@ page {
  .top{
    width:750rpx;
    background:rgba(255,255,255,1);
-   margin-top: 20rpx;
+   margin-top: 15rpx;
    display: flex;
    flex-wrap: wrap;
  }
@@ -412,16 +412,17 @@ page {
  }
  
  .time{
-   width:220rpx;
+   width:250rpx;
    height:18rpx;
-   font-size:22rpx;
+   font-size:23rpx;
    font-family:SourceHanSansCN-Regular;
    font-weight:400;
    color:rgba(156,162,187,1);
    line-height:40rpx;
    position: absolute;
-   right: 20rpx;
-   margin-top: -8rpx;
+   right: 25rpx;
+   margin-top: -13rpx;
+   z-index: 8000;
  }
  
  
@@ -576,6 +577,6 @@ page {
   width: 115rpx;
   height: 115rpx;
   display:flex;
-  position: fixed;
-  z-index: 999;
+  position: absolute;
+  /* z-index: 9999; */
 }

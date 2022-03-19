@@ -58,7 +58,7 @@ Page({
                         console.log(res, '###Add new user!###')
                       }
                       else{
-                          console.log('###You have been registered###')
+                          console.log('###You have registered###')
                       }
                   },
               })
