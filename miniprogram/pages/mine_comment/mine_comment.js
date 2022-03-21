@@ -51,8 +51,8 @@ Page({
     }).get({
       success: res => {
 
-        for (let i = 0; i < res.data.length; i++) {
-          let index = res.data.length - i - 1
+        for (let i = 0; i < res.data.length  ; i++) {
+          let index =  i 
           var discussUserId = 'discussList[' + index + '].discussUserId';
           var discussPostId = 'discussList[' + index + '].discussPostId';
           var discussTimeHour = 'discussList[' + index + '].discussTimeHour';
@@ -103,8 +103,8 @@ Page({
     }).get({
       success: res => {
         console.log(res.data)
-        for (let i = 0; i < res.data.length; i++) {
-          let index = res.data.length - i - 1
+        for (let i = 0; i < res.data.length  ; i++) {
+          let index = i 
           var postOpenid = 'discussList[' + index + '].discussUserId';
           var discussPostId = 'discussList[' + index + '].discussPostId';
           var discussTimeHour = 'discussList[' + index + '].discussTimeHour';

@@ -54,7 +54,7 @@ Page({
     }).get({
       success: res => {
         for (var j = 0; j < res.data.length; j++) {
-          let index = res.data.length - j - 1
+          let index = j
           var upUserTimeHour = 'upList[' + index + '].upUserTimeHour';
           var upUserTimeDay = 'upList[' + index + '].upUserTimeDay';
           var upUserId = 'upList[' + index + '].upUserId';
@@ -107,7 +107,7 @@ Page({
       success: res => {
         for (var j = 0; j < res.data.length; j++) {
 
-          let index = res.data.length - j - 1
+          let index = j
           var upUserTimeHour = 'upList[' + index + '].upUserTimeHour';
           var upUserTimeDay = 'upList[' + index + '].upUserTimeDay';
           var upUserId = 'upList[' + index + '].upUserId';
