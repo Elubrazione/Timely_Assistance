@@ -45,7 +45,7 @@
       <image src='/icon/book.png' style='width:60rpx;height:60rpx'></image>
     </view>
     <view class='list_button_text' >
-      我的发布
+      我的互助
     </view>
     <view class='list_button_jiantou'>
     ></view>
