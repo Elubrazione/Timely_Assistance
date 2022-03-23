@@ -90,23 +90,20 @@ Page({
       }).then(res => {
         //console.log("Assistant_Up OK!");
         //console.log("Pick the post_id:" + e.currentTarget.dataset.buypost_id);
-        wx.cloud.callFunction({
-          name: 'Assistant_Up_Sell_Intention',
+        const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
+        const _ = db.command
+        console.log("post_idddd:"+ e.currentTarget.dataset.buypost_id)
+        db.collection('Assistant_Sell_DataSheet').doc(e.currentTarget.dataset.buypost_id).update({
           data: {
-            buypost_id: e.currentTarget.dataset.buypost_id,
-          },
-          success: function (res) {
-            //console.log("Buy_Post OK!");
-            that.get_Sell_DBinf()
-            wx.showToast({
-              title: '已意向购买',
-              image: '../../icon/Up_heart.jpeg',
-              duration: 2000
-            })
-          },
-          fail: err => {
-            //console.log('error:', err)
+            Intention_Record_num: db.command.inc(1)
           }
+        }).then(res => {
+          that.get_Sell_DBinf()
+          wx.showToast({
+            title: '已意向购买',
+            image: '../../icon/buy.png',
+            duration: 2000
+          })
         })
       })
     }
@@ -144,24 +141,19 @@ Page({
       }).then(res => {
         console.log("Assistant_Up OK!");
         console.log("Pick the post_id:"+e.currentTarget.dataset.post_id);
-        wx.cloud.callFunction({
-          name: 'Up_Assistant_Post',
+        const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
+        const _ = db.command
+        db.collection('Assistant_DataSheet').doc(e.currentTarget.dataset.post_id).update({
           data: {
-            Post_id: e.currentTarget.dataset.post_id,
-          },
-          success: function (res) {
-            console.log("Up_Assistant_Post OK!");
-            that.get_DBinf()
-            wx.showToast({
-              title: '已点赞',
-              image: '../../icon/Up_heart.jpeg',
-              duration: 2000
-            })
-          },
-          //###################################################BUG
-          fail: err => {
-            console.log('error:', err)
+            Up_Record_num: _.inc(1)
           }
+        }).then(res => {
+          that.get_DBinf()
+          wx.showToast({
+            title: '点赞成功',
+            image: '../../icon/Up_heart.jpeg',
+            duration: 2000
+          })
         })
       })
     }
@@ -201,14 +193,9 @@ Page({
       success: function (res) {
         if (res.confirm) {
           console.log(e.currentTarget.dataset.post_id)//事件的id
-          wx.cloud.callFunction({
-            name: 'Remove_Assistant_DataSheet',
-            data: {
-              youid: e.currentTarget.dataset.post_id,
-            },
-            success: function (res) {
-              that.get_DBinf()
-            }
+          const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
+          db.collection('Assistant_DataSheet').doc(e.currentTarget.dataset.post_id).remove().then(res => {
+            that.get_DBinf()
           })
         }
       }
@@ -350,7 +337,7 @@ Page({
     })
   },
 
-get_Sell_DBinf:function(){
+ get_Sell_DBinf:function(){
   let that=this
   wx.getStorage({
     key: 'User_openid',
@@ -359,22 +346,21 @@ get_Sell_DBinf:function(){
         UserId: res.data
       })
       ////
-      var db = wx.cloud.database()//{ env: 'textllinpro-5br77' }
+      var db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
       let userid = res.data;
-      //console.log("My openid:"+userid);
+      console.log("My openid:"+userid);
       db.collection('Assistant_Sell_Intention').where({//获取自己的点赞列表
         _openid: userid
       }).get({
         success: res => {
           //console.log("点赞列表:", res.data)
-
+          console.log("length:"+res.data.length)
           for (var i = 0; i < res.data.length; i++) {
             SellUserUpId[i] = res.data[i].buy_Post_id//点赞列表赋给allUpId
+            console.log(res.data[i].buy_Post_id)
           }
-
           db.collection('Assistant_Sell_DataSheet').get({
             success: res => {
-  
               that.setData({
                 buyalldata: res.data//所有的用户列表数据
               })
@@ -400,13 +386,13 @@ get_Sell_DBinf:function(){
       })
     }
   })
-  const get_Sell_inf_db = wx.cloud.database()//{ env: 'textllinpro-5br77' }
+  const get_Sell_inf_db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
   get_Sell_inf_db.collection('Assistant_Sell_DataSheet').get({
       success: res => {
         that.setData({
           SellDataPostArry: res.data
         })
-        //console.log(res.data);
+        console.log(res.data);
         Promise.all(res.data.map((item) => {
           return item._openid
         })).then(res => {
@@ -438,7 +424,7 @@ get_Sell_DBinf:function(){
       }
     })
   },
-  releasefunc(){
+ releasefunc(){
     wx.showModal({
       title: '请选择发布主题',
       content: '发布求助信息请选择“互帮互助”；发布买卖信息请选择“二手交易”',
