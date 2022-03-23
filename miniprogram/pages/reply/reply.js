@@ -60,20 +60,26 @@ Page({
     console.log(that.data.PageId)
     console.log(that.data.Time)*/
 
-    wx.cloud.callFunction({
-      name: 'reply',
+    // wx.cloud.callFunction({
+    //   name: 'reply',
+    //   data: {
+    //     /*Reply_Context: that.data.inputMessage,
+    //     Reply_Head_url: that.data.HeadImageUrl,
+    //     Reply_Time:that.data.SendTime,
+    //     Reply_Username: that.data.UserName,*/
+    //     Page_id: that.data.PageId
+    //   },
+    //   success: function (res) {
+    //    // console.log(res.result)
+    //   }
+    // })
+    const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3'})
+    const _ = db.command
+    db.collection('Assistant_DataSheet').doc(that.data.PageId).update({
       data: {
-        /*Reply_Context: that.data.inputMessage,
-        Reply_Head_url: that.data.HeadImageUrl,
-        Reply_Time:that.data.SendTime,
-        Reply_Username: that.data.UserName,*/
-        Page_id: that.data.PageId
-      },
-      success: function (res) {
-       // console.log(res.result)
+        Reply_Record_num: _.inc(1)
       }
     })
-
     db.collection('My_ReplyData').add({
       data: {
         context: that.data.inputMessage,
