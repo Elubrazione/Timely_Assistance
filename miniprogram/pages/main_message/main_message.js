@@ -13,7 +13,7 @@ Page({
     //   {username:"小蓝",userid:"小蓝",userimg:"../../icon/user-unlogin.png",lastmessage:"谢谢你"},
     // ],
     chatlist:[],
-    myid:"",
+    myid:""
   },
 
   /**
@@ -70,7 +70,9 @@ Page({
             username:res.data[i].username[which],
             userid:res.data[i].userid[which],
             userimg:res.data[i].userface[which],
-            lastmessage:res.data[i].messages[res.data[i].messages.length-1].content
+            lastmessage:res.data[i].messages[res.data[i].messages.length-1].content,
+            lasttime:res.data[i].lasttime,
+            newmessage:res.data[i].somenew[(which+1)%2]
           })
         }
         that.setData({
@@ -101,9 +103,12 @@ Page({
             username:res.data[i].username[which],
             userid:res.data[i].userid[which],
             userimg:res.data[i].userface[which],
-            lastmessage:res.data[i].messages[res.data[i].messages.length-1].content
+            lastmessage:res.data[i].messages[res.data[i].messages.length-1].content,
+            lasttime:res.data[i].lasttime,
+            newmessage:res.data[i].somenew[(which+1)%2]
           })
         }
+        console.log(newlist)
         that.setData({
           chatlist:newlist
         })

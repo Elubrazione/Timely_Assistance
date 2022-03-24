@@ -16,6 +16,8 @@
                 <view class="name">{{item.username}}</view>
                 <view class="lastmsg">{{item.lastmessage}}</view>
             </view>
+            <view class="rightpart">{{item.lasttime}}</view>
+            <view wx:if="{{item.newmessage}}" class="red"></view>
         </view>
     </view>
 </view>

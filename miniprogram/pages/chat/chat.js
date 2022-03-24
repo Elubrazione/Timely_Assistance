@@ -21,20 +21,6 @@ Page({
         yourid:"",
         yourname:"",
 
-        // allmessage:[
-        //     {sender:"meteor shower",content:"你好啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊埃里克森的皇家萨拉昆达山东黄金"},
-        //     {sender:"小红",content:"不好啊啊啊是卡洛夫基本是分开紧急应对措施v将发生啊看出你是"},
-        //     {sender:"meteor shower",content:"在干嘛啊啊啊"},
-        //     {sender:"meteor shower",content:"你好啊啊啊"},
-        //     {sender:"小红",content:"不"},
-        //     {sender:"meteor shower",content:"在干嘛啊啊啊"},
-        //     {sender:"meteor shower",content:"你好啊啊啊"},
-        //     {sender:"小红",content:"不好啊啊啊"},
-        //     {sender:"meteor shower",content:"在干嘛啊啊啊"},
-        //     {sender:"meteor shower",content:"你好啊啊啊"},
-        //     {sender:"小红",content:"不好啊啊啊"},
-        //     {sender:"meteor shower",content:"在干嘛啊啊啊"},
-        // ]
         allmessage:[]
     },
 
@@ -129,6 +115,7 @@ Page({
                 userid:[that.data.myid,that.data.yourid],
                 username:[that.data.myname,that.data.yourname],
                 userface:[that.data.myface_url,that.data.yourface_url],
+                somenew:[0,1],
                 messages:that.data.allmessage,
                 lasttime:that.data.Time
               },success: function (res) {
@@ -140,12 +127,17 @@ Page({
             })
           }
           else{
+            var which1=0
+            var which2=0
+            if(res.data[0].userid[0]==that.data.myid) {which1=0,which2=1}
+            else {which1=1,which2=0}
             wx.cloud.database().collection('Chat_Record').where({
               userid: _.all([that.data.myid,that.data.yourid])
             }).update({
               data:{
                 messages:that.data.allmessage,
-                lasttime:that.data.Time
+                lasttime:that.data.Time,
+                somenew:[which1,which2]
               }
             })
             console.log('meijinlai');
@@ -160,6 +152,8 @@ Page({
      */
     onReady: function () {
       var that=this
+      var wh=[0,0]
+      var which=0
       wx.setNavigationBarTitle({
         title: that.data.yourname,
       })
@@ -169,6 +163,17 @@ Page({
         success:function(res){
           console.log(res);
           if(res.data.length){
+            if(res.data[0].userid[0]==that.data.myid) which=0
+            else which=1
+            wh=res.data[0].somenew
+            wh[which]=0
+            wx.cloud.database().collection('Chat_Record').where({
+              userid: _.all([that.data.myid,that.data.yourid])
+            }).update({
+              data:{
+                somenew:wh
+              }
+            })
             that.setData({
               allmessage:res.data[0].messages
             })
