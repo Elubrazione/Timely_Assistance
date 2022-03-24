@@ -106,3 +106,11 @@
     font-weight:600;
     line-height:50rpx;
   } 
+
+  .ddown{
+    font-size: 30rpx;
+    padding: 5rpx;
+    text-align: center;
+    color: rgb(77, 75, 75);
+    background-color: rgb(233,178,95);
+  }
