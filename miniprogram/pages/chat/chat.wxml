@@ -1,4 +1,5 @@
 <!--pages/chat/chat.wxml-->
+<view bindtap="down" class="ddown">滑到最新</view>
 <scroll-view id='body-view' wx:for="{{allmessage}}">
   <view wx:if="{{item.sender == myid}}">
     <view class="onechat1">
@@ -35,7 +36,7 @@
         <image src='/images/topic/fb.png'></image>
         <-->
         <view class="block"></view>
-          <input name="userName" value="{{inputMessage}}" cursor-spacing="20"></input>
+          <input class="in" name="userName" value="{{inputMessage}}" cursor-spacing="20"></input>
       </view>
       <button form-type="submit">
         <text class='fb'>发送</text>
