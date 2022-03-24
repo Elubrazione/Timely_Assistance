@@ -60,19 +60,6 @@ Page({
     console.log(that.data.PageId)
     console.log(that.data.Time)*/
 
-    // wx.cloud.callFunction({
-    //   name: 'reply',
-    //   data: {
-    //     /*Reply_Context: that.data.inputMessage,
-    //     Reply_Head_url: that.data.HeadImageUrl,
-    //     Reply_Time:that.data.SendTime,
-    //     Reply_Username: that.data.UserName,*/
-    //     Page_id: that.data.PageId
-    //   },
-    //   success: function (res) {
-    //    // console.log(res.result)
-    //   }
-    // })
     const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3'})
     const _ = db.command
     db.collection('Assistant_DataSheet').doc(that.data.PageId).update({
@@ -114,34 +101,36 @@ Page({
       content: '请问是否删除本条评论？',
       success: function (res) {
         if (res.confirm) {
-         // console.log(e.currentTarget.dataset.post_id)//事件的id
-          wx.cloud.callFunction({
-            name: 'Remove_Reply',
-            data: {
-              Page_id: e.currentTarget.dataset.post_id,
-            },
-            success: function (res) {
-            //  console.log("删除成功！")
-              //刷新页面数据
-              db.collection('My_ReplyData').where({
-                PageId: that.data.PageId
-              }).get({
-                success: function (res) {
-                  that.setData({
-                    dataArray: res.data
-                  })
-                }
-              })
-            }
-          })
+          const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
+          console.log("post_id: "+e.currentTarget.dataset.post_id)
 
-          wx.cloud.callFunction({
-            name: 'Remove_Reply_DataSheet',
-            data: {
-              Page_id: that.data.PageId,
-            },
-            sucesss: function (res) {
-             // console.log("我也删除成功！")
+          db.collection('My_ReplyData').doc(e.currentTarget.dataset.post_id).remove().then(res => {
+            db.collection('My_ReplyData').where({
+              PageId: that.data.PageId
+            }).get({
+              success: function(res){
+                that.setData({
+                  dataArray: res.data
+                })
+              }
+            })
+          })
+          console.log("pageid:"+that.data.PageId)
+          var now_reply_record_num = 0
+          db.collection('Assistant_DataSheet').where({
+            _id: that.data.PageId
+          }).get({
+            success: res => {
+              console.log("length:"+res.data.length)
+              now_reply_record_num = res.data[0].Reply_Record_num
+              console.log("now:"+now_reply_record_num)
+              db.collection('Assistant_DataSheet').doc(that.data.PageId).update({
+                data: {
+                  Reply_Record_num: now_reply_record_num - 1
+                }
+              }).then(res => {
+                console.log('delete successfully')
+              })
             }
           })
         }

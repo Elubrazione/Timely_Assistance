@@ -32,7 +32,7 @@
 
       <block wx:if="{{dataArray[index]._openid==ReplyOpenId}}">
         <view class='b_11' bindtap='Remove_Post' data-post_id="{{item._id}}">
-          <image src='../../icon/del1.png'></image>
+          <image src='../../icon/del1.jpeg'></image>
           <label>删除</label>
         </view>
       </block>
