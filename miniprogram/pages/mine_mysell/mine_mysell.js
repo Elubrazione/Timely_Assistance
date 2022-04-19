@@ -1,4 +1,4 @@
-//const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
+//const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb9-7b660ab05e3' })
 var app = getApp()
 var util = require('../../utils/util.js');
 var buyallId = new Array()
@@ -81,7 +81,7 @@ Page({
         that.setData({
           UserId: res.data
         })
-        const get_Sell_inf_db = wx.cloud.database()//{ env: 'cloud1-3gkv0ad979cb98b3' }
+        const get_Sell_inf_db = wx.cloud.database()//{ env: 'cloud1-3gkv0ad979cb9-7b660ab05e3' }
         get_Sell_inf_db.collection('Assistant_Sell_DataSheet').where({
           _openid: res.data
         }).get({

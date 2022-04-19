@@ -99,7 +99,7 @@ Page({
 
         console.log(app.globalData.openid)
         const _id = app.globalData.openid
-        const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
+        const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb9-7b660ab05e3' })
         return db.collection('Assistant_Sell_DataSheet').add({ //添加帖子
           data: {
             Context: that.data.telValue,

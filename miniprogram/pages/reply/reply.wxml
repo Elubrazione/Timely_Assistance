@@ -29,7 +29,6 @@
 
     <view class='top2'>
       <text bindlongpress="showModal" data-target="bottomModal">{{item.context}}</text>
-
       <block wx:if="{{dataArray[index]._openid==ReplyOpenId}}">
         <view class='b_11' bindtap='Remove_Post' data-post_id="{{item._id}}">
           <image src='../../icon/del1.jpeg'></image>

@@ -2,7 +2,7 @@ var app = getApp()
 var util = require('../../utils/util.js');
 var allId = new Array()
 var allUpId = new Array()
-const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
+const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb9-7b660ab05e3' })
 Page({
 
   data: {
@@ -118,7 +118,7 @@ Page({
       this.setData({
         [nowup]: 1
       })
-      const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
+      const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb9-7b660ab05e3' })
       return db.collection('Assistant_Up').add({ //添加帖子
         data: {
           Up_Post_id: e.currentTarget.dataset.post_id,

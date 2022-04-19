@@ -25,8 +25,8 @@
 }
 
 .icon{
-  width:95rpx;
-  height:95rpx;
+  width:68rpx;
+  height:68rpx;
   border-radius:43rpx;
   margin-left: 20rpx;
 }
