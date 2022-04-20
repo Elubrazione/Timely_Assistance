@@ -73,7 +73,7 @@ Page({
     //console.log("buyind:" + buyind);
 
     const buypostopenid = e.currentTarget.dataset.buypostopenid
-    if (this.data.SellUpArray[buyind] == 0)//说明没点赞过
+    if (this.data.SellUpArray[buyind] == 0)//没点赞过
     {
 
       var nowup = 'SellUpArray[' + buyind + ']'//设置为点赞过
