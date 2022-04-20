@@ -80,7 +80,7 @@ Page({
       this.setData({
         [nowup]: 1
       })
-      const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
+      const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb9-7b660ab05e3' })
       return db.collection('Assistant_Sell_Intention').add({ //添加帖子
         data: {
           buy_Post_id: e.currentTarget.dataset.buypost_id,
@@ -90,7 +90,7 @@ Page({
       }).then(res => {
         //console.log("Assistant_Up OK!");
         //console.log("Pick the post_id:" + e.currentTarget.dataset.buypost_id);
-        const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
+        const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb9-7b660ab05e3' })
         const _ = db.command
         console.log("post_idddd:"+ e.currentTarget.dataset.buypost_id)
         db.collection('Assistant_Sell_DataSheet').doc(e.currentTarget.dataset.buypost_id).update({
@@ -131,7 +131,7 @@ Page({
       this.setData({
         [nowup]: 1
       })
-      const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
+      const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb9-7b660ab05e3' })
       return db.collection('Assistant_Up').add({ //添加帖子
         data: {
           Up_Post_id: e.currentTarget.dataset.post_id,
@@ -141,7 +141,7 @@ Page({
       }).then(res => {
         console.log("Assistant_Up OK!");
         console.log("Pick the post_id:"+e.currentTarget.dataset.post_id);
-        const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
+        const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb9-7b660ab05e3' })
         const _ = db.command
         db.collection('Assistant_DataSheet').doc(e.currentTarget.dataset.post_id).update({
           data: {
@@ -193,7 +193,7 @@ Page({
       success: function (res) {
         if (res.confirm) {
           console.log(e.currentTarget.dataset.post_id)//事件的id
-          const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
+          const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb9-7b660ab05e3' })
           db.collection('Assistant_DataSheet').doc(e.currentTarget.dataset.post_id).remove().then(res => {
             that.get_DBinf()
           })
@@ -346,7 +346,7 @@ Page({
         UserId: res.data
       })
       ////
-      var db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
+      var db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb9-7b660ab05e3' })
       let userid = res.data;
       console.log("My openid:"+userid);
       db.collection('Assistant_Sell_Intention').where({//获取自己的点赞列表
@@ -386,7 +386,7 @@ Page({
       })
     }
   })
-  const get_Sell_inf_db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
+  const get_Sell_inf_db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb9-7b660ab05e3' })
   get_Sell_inf_db.collection('Assistant_Sell_DataSheet').get({
       success: res => {
         that.setData({

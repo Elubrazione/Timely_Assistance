@@ -40,7 +40,7 @@ Page({
                 key: "userInfo",
                 data: this.data.userInfo
               })
-              const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
+              const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb9-7b660ab05e3' })
               db.collection('Assistant_User').where({_openid: app.globalData.openid,
               }).get({
                   success: reg => {

@@ -73,7 +73,7 @@ Page({
     //    // console.log(res.result)
     //   }
     // })
-    const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb98b3'})
+    const db = wx.cloud.database({ env: 'cloud1-3gkv0ad979cb9-7b660ab05e3'})
     const _ = db.command
     db.collection('Assistant_DataSheet').doc(that.data.PageId).update({
       data: {

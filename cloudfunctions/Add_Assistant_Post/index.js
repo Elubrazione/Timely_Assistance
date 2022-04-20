@@ -6,7 +6,7 @@ cloud.init()
 // 云函数入口函数
 exports.main = async (event, context) => {
   console.log("updatevote in")
-  const db = cloud.database({ env: 'cloud1-3gkv0ad979cb98b3' })
+  const db = cloud.database({ env: 'cloud1-3gkv0ad979cb9-7b660ab05e3' })
   const _ = db.command
   const Useropenid = event.Useropenid
   const postuserid = event.postopenid
